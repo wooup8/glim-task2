@@ -1,0 +1,32 @@
+#include <string>
+#include <vector>
+#include <stdlib.h>
+
+using namespace std;
+
+int solution(vector<int> ingredient) {
+    int answer = 0;
+    
+string t_str = "";
+string t_str2 = "";
+for (int i = 0; i < ingredient.size(); i++)
+{
+	t_str += to_string(ingredient[i]);
+	
+//	int t_pos = t_str.find("1231");
+	if (t_str.size() >= 4)
+	{
+		t_str2 = t_str.substr(t_str.size() - 4, 4);
+		if (t_str2 == "1231")
+		{
+			t_str.erase(t_str.size() - 4, 4);
+			answer++;
+		}
+	}
+	
+
+}
+
+
+    return answer;
+}

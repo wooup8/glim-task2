@@ -1,0 +1,25 @@
+#include <string>
+#include <vector>
+#include <math.h>
+
+using namespace std;
+
+long long solution(int r1, int r2) {
+    long long answer = 0;
+    
+
+for (int i = 1; i <= r2; i++)
+{
+	int j_max = floor(sqrt((pow(r2, 2) - pow(i, 2))));
+	int j_min = 0;
+	if (i < r1)
+	{
+		j_min=ceil(sqrt((pow(r1, 2) - pow(i, 2))));
+	}
+	
+	answer += (j_max - j_min + 1);
+}
+answer *= 4;
+    
+    return answer;
+}

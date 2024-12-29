@@ -1,0 +1,25 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int a, int b) {
+    int answer = 0;
+    
+    string t_strab="";
+    string t_strba="";
+    
+    int ab, ba;
+    
+    t_strab+=to_string(a);
+    t_strab+=to_string(b);
+    
+    t_strba+=to_string(b);
+    t_strba+=to_string(a);
+    
+    ab = stoi(t_strab);
+    ba = stoi(t_strba);
+    
+    answer = max(ab, ba);
+    return answer;
+}
